@@ -3,21 +3,21 @@ import { menu_region, menu_list } from '../../assets/assets/frontend_assets/asse
 import './ExploreMenu.css';
 
 const ExploreMenu = ({ region, setRegion, category, setCategory }) => {
-  const [step, setStep] = useState(1); // Bước 1: Chọn vùng, Bước 2: Chọn danh mục
+  const [step, setStep] = useState(1);
 
   const handleRegionClick = (selectedRegion) => {
     if (region === selectedRegion) {
-      // Nếu click lại vào vùng đã chọn, reset về mặc định
+      
       setRegion('All');
     } else {
       setRegion(selectedRegion);
-      setStep(2); // Chuyển sang bước 2
+      setStep(2); 
     }
   };
 
   const handleCategoryClick = (selectedCategory) => {
     if (category === selectedCategory) {
-      // Nếu click lại vào danh mục đã chọn, reset về mặc định
+    
       setCategory('All');
     } else {
       setCategory(selectedCategory);
@@ -31,7 +31,7 @@ const ExploreMenu = ({ region, setRegion, category, setCategory }) => {
         Choose from a diverse menu featuring a delectable array of dishes crafted with the finest ingredients and culinary expertise.
       </p>
 
-      {/* Bảng 1: Bắc, Trung, Nam */}
+      {}
       {step === 1 && (
         <div className="explore-menu-list">
           {menu_region.map((item, index) => (
@@ -51,14 +51,14 @@ const ExploreMenu = ({ region, setRegion, category, setCategory }) => {
         </div>
       )}
 
-      {/* Bảng 2: Mặn, Nước, Tráng miệng */}
+      {}
       {step === 2 && (
         <div>
           <button
             className="back-button"
             onClick={() => {
-              setStep(1); // Quay lại bước 1
-              setCategory('All'); // Reset category khi quay lại
+              setStep(1); 
+              setCategory('All'); 
             }}
           >
             Quay lại
