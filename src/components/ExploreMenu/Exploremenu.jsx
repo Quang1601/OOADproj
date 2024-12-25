@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { menu_region, menu_list } from '../../assets/assets/frontend_assets/assets';
-import './ExploreMenu.css';
+import './Exploremenu.css';
 
 const ExploreMenu = ({ region, setRegion, category, setCategory }) => {
   const [step, setStep] = useState(1);
