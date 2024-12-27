@@ -28,3 +28,13 @@
     cursor: pointer;
     color: red;
 }
+.cart-total button{
+   border: none;
+   color: #e2e2e2;
+   background-color: tomato;
+   width: (15vw,200px);
+   padding: 12px 0px;
+    border-radius :4px;
+    cursor: pointer;
+    
+}

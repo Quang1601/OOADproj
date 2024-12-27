@@ -4,7 +4,7 @@ import './Exploremenu.css';
 
 const ExploreMenu = ({ region, setRegion, category, setCategory }) => {
   const [step, setStep] = useState(1);
-
+          
   const handleRegionClick = (selectedRegion) => {
     if (region === selectedRegion) {
       
@@ -13,6 +13,7 @@ const ExploreMenu = ({ region, setRegion, category, setCategory }) => {
       setRegion(selectedRegion);
       setStep(2); 
     }
+    
   };
 
   const handleCategoryClick = (selectedCategory) => {
