@@ -129,7 +129,7 @@ export const food_list = [
         name: "Phở",
         image: food_1,
         price: 12,
-        description: "Food provides essential nutrients for overall health and well-being",
+        description: "A fragrant Vietnamese noodle soup with beef or chicken, served with fresh herbs and lime.",
         rid: "north",
         category: "nước",
        
@@ -139,55 +139,55 @@ export const food_list = [
         name: "Bún ngan ",
         image: food_2,
         price: 18,
-        description: "Food provides essential nutrients for overall health and well-being",
-       rid: "north",
+        description: "A comforting noodle dish with duck and rich, savory broth.",
+        rid: "north",
         category: "nước"
     }, {
         _id: "3",
         name: "Bún ốc",
         image: food_3,
         price: 16,
-        description: "Food provides essential nutrients for overall health and well-being",
-       rid: "north",
+        description: "A tangy snail noodle soup made with tomatoes and herbs, a northern delicacy.",
+        rid: "north",
         category: "nước"
     }, {
         _id: "4",
         name: "phở cuốn",
         image: food_4,
         price: 24,
-        description: "Food provides essential nutrients for overall health and well-being",
-       rid: "north",
+        description: "Delicious rice noodle rolls filled with beef, herbs, and dipping sauce.",
+        rid: "north",
         category: "mặn"
     }, {
         _id: "5",
         name: "Chả cá Lã Vọng",
         image: food_5,
         price: 14,
-        description: "Food provides essential nutrients for overall health and well-being",
-       rid: "north",
+        description: "Grilled fish marinated with turmeric and dill, served sizzling on a skillet.",
+        rid: "north",
         category: "mặn"
     }, {
         _id: "6",
         name: "Bánh tôm Hồ Tây",
         image: food_6,
         price: 12,
-        description: "Food provides essential nutrients for overall health and well-being",
-       rid: "north",
+        description: "Crispy shrimp fritters served with tangy dipping sauce.",
+        rid: "north",
         category: "mặn"
     }, {
         _id: "7",
         name: "chè dừa dầm",
         image: food_7,
         price: 20,
-        description: "Food provides essential nutrients for overall health and well-being",
-       rid: "north",
+        description: "A refreshing coconut dessert with jelly and tropical fruits.",
+        rid: "north",
         category: "tráng miệng"
     }, {
         _id: "8",
         name: "Chè trôi nước",
         image: food_8,
         price: 15,
-        description: "Food provides essential nutrients for overall health and well-being",
+        description: "Sweet glutinous rice balls filled with mung bean paste, in a warm ginger syrup.",
        rid: "central",
         category: "tráng miệng"
     }, {
@@ -195,23 +195,23 @@ export const food_list = [
         name: "Bánh đa kê",
         image: food_9,
         price: 14,
-        description: "Food provides essential nutrients for overall health and well-being",
-       rid: "north",
+        description: "A crunchy snack of rice paper topped with mung bean and sugar.",
+        rid: "north",
         category: "tráng miệng"
     }, {
         _id: "10",
         name: "Bún bò Huế",
         image: food_10,
         price: 22,
-        description: "Food provides essential nutrients for overall health and well-being",
-       rid: "central",
+        description: "A spicy beef noodle soup with lemongrass and chili from central Vietnam.",
+        rid: "central",
         category: "nước"
     }, {
         _id: "11",
         name: "Mì quảng",
         image: food_11,
         price: 10,
-        description: "Food provides essential nutrients for overall health and well-being",
+        description: "A flavorful noodle dish with a small amount of broth, served with herbs and crackers.",
         rid:"central",
         category: "nước"
     }, {
@@ -219,8 +219,8 @@ export const food_list = [
         name: "Bánh canh cá lóc ",
         image: food_12,
         price: 12,
-        description: "Food provides essential nutrients for overall health and well-being",
-       rid: "central",
+        description: "Thick noodles in a savory broth with snakehead fish and herbs.",
+        rid: "central",
         category: "nước"
     },
     {
@@ -228,8 +228,8 @@ export const food_list = [
         name: "Bánh xèo",
         image: food_13,
         price: 12,
-        description: "Food provides essential nutrients for overall health and well-being",
-       rid: "central",
+        description: "Crispy Vietnamese pancakes filled with shrimp, pork, and bean sprouts.",
+        rid: "central",
         category: "mặn"
     },
     {
@@ -237,63 +237,63 @@ export const food_list = [
         name: "Bánh căn ",
         image: food_14,
         price: 18,
-        description: "Food provides essential nutrients for overall health and well-being",
-       rid: "central",
+        description: "Small savory pancakes topped with shrimp or pork, served with dipping sauce.",
+        rid: "central",
         category: "mặn"
     }, {
         _id: "15",
         name: "Cơm hến",
         image: food_15,
         price: 16,
-        description: "Food provides essential nutrients for overall health and well-being",
-       rid: "central",
+        description: "A unique dish of rice topped with baby clams and crunchy toppings.",
+        rid: "central",
         category: "mặn"
     }, {
         _id: "16",
         name: "Cao lầu",
         image: food_16,
         price: 24,
-        description: "Food provides essential nutrients for overall health and well-being",
-       rid: "central",
+        description: "Hoi An’s iconic noodle dish with pork and crispy crackers.",
+        rid: "central",
         category: "mặn"
     }, {
         _id: "17",
         name: "Chè bắp",
         image: food_17,
         price: 14,
-        description: "Food provides essential nutrients for overall health and well-being",
-       rid: "central",
+        description: "A sweet corn dessert with creamy coconut sauce.",
+        rid: "central",
         category: "tráng miệng"
     }, {
         _id: "18",
         name: "Bánh chuối chiên",
         image: food_18,
         price: 12,
-        description: "Food provides essential nutrients for overall health and well-being",
-       rid: "central",
+        description: "Crispy deep-fried bananas, a popular street snack.",
+        rid: "central",
         category: "tráng miệng"
     }, {
         _id: "19",
         name: "Bún quậy",
         image: food_19,
         price: 20,
-        description: "Food provides essential nutrients for overall health and well-being",
-       rid: "south",
+        description: "A Southern specialty with noodles and fresh seafood, mixed tableside.",
+        rid: "south",
         category: "mặn"
     }, {
         _id: "20",
         name: "Hủ tiếu nam vang",
         image: food_20,
         price: 15,
-        description: "Food provides essential nutrients for overall health and well-being",
-       rid: "south",
+        description: "A savory noodle soup with pork, shrimp, and a delicate broth.",
+        rid: "south",
         category: "nước"
     }, {
         _id: "21",
         name: "Bánh canh ghẹ  ",
         image: food_21,
         price: 14,
-        description: "Food provides essential nutrients for overall health and well-being",
+        description: "A rich and hearty crab noodle soup with thick rice noodles and fresh herbs.",
        rid: "south",
         category: "nước"
     }, {
@@ -301,24 +301,24 @@ export const food_list = [
         name: "Bún riêu cua",
         image: food_22,
         price: 22,
-        description: "Food provides essential nutrients for overall health and well-being",
-       rid: "south",
+        description: "A tangy and aromatic crab paste noodle soup with tomatoes and tofu.",
+        rid: "south",
         category: "nước"
     }, {
         _id: "23",
         name: "Cơm tấm",
         image: food_23,
         price: 10,
-        description: "Food provides essential nutrients for overall health and well-being",
-       rid: "south",
+        description: "Broken rice served with grilled pork, egg, and pickled vegetables, a southern classic.",
+        rid: "south",
         category: "mặn"
     }, {
         _id: "24",
         name: "Bò xào cải chua",
         image: food_24,
         price: 12,
-        description: "Food provides essential nutrients for overall health and well-being",
-       rid: "south",
+        description: "Stir-fried beef with tangy pickled mustard greens, perfect with steamed rice.",
+        rid: "south",
         category: "mặn"
     },
     {
@@ -326,8 +326,8 @@ export const food_list = [
         name: "Thịt kho hột vịt",
         image: food_25,
         price: 12,
-        description: "Food provides essential nutrients for overall health and well-being",
-       rid: "south",
+        description: "Caramelized pork belly and boiled eggs simmered in a sweet-savory sauce.",
+        rid: "south",
         category: "mặn"
     },
     {
@@ -335,31 +335,31 @@ export const food_list = [
         name: "Sườn kho chua ngọt ",
         image: food_26,
         price: 18,
-        description: "Food provides essential nutrients for overall health and well-being",
-       rid: "south",
+        description: "Sweet and sour braised pork ribs, a comforting family favorite.",
+        rid: "south",
         category: "mặn"
     }, {
         _id: "27",
         name: "Bánh da lợn",
         image: food_27,
         price: 16,
-        description: "Food provides essential nutrients for overall health and well-being",
-       rid: "south",
+        description: "A layered steamed dessert made with pandan and mung beans.",
+        rid: "south",
         category: "tráng miệng"
     }, {
         _id: "28",
         name: "Bò bía ngọt",
         image: food_28,
         price: 24,
-        description: "Food provides essential nutrients for overall health and well-being",
-       rid: "south",
+        description: "Sweet spring rolls filled with shredded coconut, sugar, and sesame seeds.",
+        rid: "south",
         category: "tráng miệng"
     }, {
         _id: "29",
         name: "Bánh tráng trộn",
         image: food_29,
         price: 14,
-        description: "Food provides essential nutrients for overall health and well-being",
+        description: "A popular street snack of mixed rice paper with dried shrimp, mango, and herbs.",
         rid: "south",
         category: "tráng miệng"
     }, {
@@ -367,23 +367,24 @@ export const food_list = [
         name: "Bún kèn",
         image: food_30,
         price: 12,
-        description: "Food provides essential nutrients for overall health and well-being",
+        description: "A coconut milk-based noodle soup with minced fish, a southern specialty.",
+        rid: "south",
         category: "nước"
     }, {
         _id: "31",
         name: " Bún chả ",
         image: food_31,
         price: 20,
-        description: "Food provides essential nutrients for overall health and well-being",
-       rid: "north",
+        description: "Grilled pork served with vermicelli noodles, herbs, and a tangy dipping sauce.",
+        rid: "north",
         category: "mặn"
     }, {
         _id: "32",
         name: "Bánh chưng ",
         image: food_32,
         price: 15,
-        description: "Food provides essential nutrients for overall health and well-being",
-       rid: "north",
+        description: "A traditional square rice cake filled with pork and mung beans, wrapped in banana leaves.",
+        rid: "north",
         category: "mặn"
     },
     {
@@ -391,8 +392,8 @@ export const food_list = [
         name: "Hủ tiếu chay", 
         image: food_33,        
         price: 30,
-        description: "Food provides essential nutrients for overall health and well-being",
-       rid: "south",
+        description: "A light vegetarian noodle soup made with fresh vegetables and tofu.",
+        rid: "south",
         category: "nước"
  
 
