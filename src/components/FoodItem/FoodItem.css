@@ -80,3 +80,27 @@
     width: 30px;
 
 }
+.food-item-select-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: tomato;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.food-item-select-button:hover {
+    background-color: #ff7043;
+    transform: translateY(-2px);
+}
+
+.food-item-select-button:active {
+    background-color: #d64020;
+    transform: translateY(0);
+}
