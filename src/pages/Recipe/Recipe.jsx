@@ -11,6 +11,10 @@ const Recipe = () => {
     setRecipe(selectedFood);
   }, [id]);
 
+  const handleOrderIngredients = () => {
+    navigate('/order', { state: { ingredients: recipe.ingredients } });
+  };
+
   if (!recipe) {
     return <div>Loading...</div>; 
   }
@@ -42,6 +46,9 @@ const Recipe = () => {
       ) : (
         <p>No instructions available.</p> 
       )}
+      <button className="recipe-btn" onClick={handleOrderIngredients}>
+        Order Ingredients
+      </button>
     </div>
   );
 };
