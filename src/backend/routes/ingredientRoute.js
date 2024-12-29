@@ -14,7 +14,9 @@ const storage = multer.diskStorage({
 
 export const upload = multer({storage:storage});
 
-ingredientRouter.post("/add",upload.single("image"),addIngredient)
+ingredientRouter.post("/add",upload.single("image"),addIngredient);
+ingredientRouter.get("/list", getAllIngredients);
+ingredientRouter.put("/update/:ingredientId", upload.single("image"), updateIngredient);
 ingredientRouter.delete("/delete/:ingredientId", deleteIngredient);
 
 

@@ -21,9 +21,11 @@ app.get("/",(req,res)=>{
     res.send("API Working")
 })
 
-app.listen(port,()=>{
-    console.log('Server started on http://localhost:${port}');
-})
-
 const __dirname = path.resolve();
 app.use("/assets", express.static(path.join(__dirname, "assets")));
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
+app.listen(port,()=>{
+    console.log(`Server started on http://localhost:${port}`);
+})
+
