@@ -81,4 +81,17 @@ export const deleteIngredient = async (req, res) => {
       res.status(500).json({ error: error.message });
     }
   };
+
+export const deleteAllIngredients = async (req, res) => {
+    try {
+      const result = await ingredientModel.deleteMany({});
+      res.status(200).json({
+        success: true,
+        message: `${result.deletedCount} ingredients deleted successfully`,
+      });
+    } catch (error) {
+      res.status(500).json({ success: false, message: error.message });
+    }
+  };
+  
  
