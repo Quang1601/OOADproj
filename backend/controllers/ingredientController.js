@@ -16,6 +16,21 @@ export const addIngredient = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
+
+export const addIngredientsFromList = async (req, res) => {
+  try {
+    const ingredientList = req.body.ingredients; 
+
+    if (!ingredientList || !Array.isArray(ingredientList)) {
+      return res.status(400).json({ success: false, message: "Invalid ingredient list provided" });
+    }
+
+    const createdIngredients = await ingredientModel.insertMany(ingredientList);
+    res.status(201).json({ success: true, data: createdIngredients });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
   
 export const getAllIngredients = async (req, res) => {
     try {

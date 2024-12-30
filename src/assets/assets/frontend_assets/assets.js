@@ -66,7 +66,7 @@ import shrimp from './shrimp.png'
 import crab from './crab.png'
 import babyClams from './babyClams.png'
 import appleSnail from './appleSnail.png'
-import beanSprout from './beanSprout.png'
+import beanSprouts from './beanSprouts.png'
 import mustardGreens from './mustardGreens.png'
 import cilantro from './cilantro.png'
 import thaiBasil from './thaiBasil.png'
@@ -617,3 +617,59 @@ export const food_list = [
 
     }
 ]
+
+export const ingredientList = [
+    { name: "Egg", quantity: 1, unit: "pcs", price: 3000, image: "./egg.png" },
+    { name: "Quail Egg", quantity: 10, unit: "pcs", price: 5000, image: "./quailEgg.png" },
+    { name: "Pho Noodle", quantity: 500, unit: "g", price: 20000, image: "./pho_noodle.png" },
+    { name: "Wide Rice Noodle", quantity: 500, unit: "g", price: 25000, image: "./wideRiceNoodle.png" },
+    { name: "Round Rice Noodle", quantity: 500, unit: "g", price: 25000, image: "./roundRiceNoodle.png" },
+    { name: "Beef", quantity: 1, unit: "kg", price: 120000, image: "./beef.png" },
+    { name: "Chicken", quantity: 1, unit: "kg", price: 80000, image: "./chicken.png" },
+    { name: "Duck", quantity: 1, unit: "kg", price: 100000, image: "./duck.png" },
+    { name: "Pork", quantity: 1, unit: "kg", price: 90000, image: "./pork.png" },
+    { name: "Minced Fish", quantity: 500, unit: "g", price: 75000, image: "./mincedFish.png" },
+    { name: "Shrimp", quantity: 1, unit: "kg", price: 150000, image: "./shrimp.png" },
+    { name: "Crab", quantity: 1, unit: "kg", price: 200000, image: "./crab.png" },
+    { name: "Baby Clams", quantity: 1, unit: "kg", price: 60000, image: "./babyClams.png" },
+    { name: "Apple Snail", quantity: 1, unit: "kg", price: 70000, image: "./appleSnail.png" },
+    { name: "Bean Sprout", quantity: 500, unit: "g", price: 20000, image: "./beanSprouts.png" },
+    { name: "Mustard Greens", quantity: 500, unit: "g", price: 25000, image: "./mustardGreens.png" },
+    { name: "Cilantro", quantity: 100, unit: "g", price: 10000, image: "./cilantro.png" },
+    { name: "Thai Basil", quantity: 100, unit: "g", price: 12000, image: "./thaiBasil.png" },
+    { name: "Mint", quantity: 100, unit: "g", price: 10000, image: "./mint.png" },
+    { name: "Scallions", quantity: 100, unit: "g", price: 15000, image: "./scalions.png" },
+    { name: "Dill", quantity: 100, unit: "g", price: 15000, image: "./dill.png" },
+    { name: "White Onion", quantity: 1, unit: "pcs", price: 20000, image: "./whiteOnion.png" },
+    { name: "Lemongrass", quantity: 100, unit: "g", price: 15000, image: "./lemongrass.png" },
+    { name: "Ginger", quantity: 100, unit: "g", price: 20000, image: "./ginger.png" },
+    { name: "Tomatoes", quantity: 500, unit: "g", price: 18000, image: "./tomatoes.png" },
+    { name: "Green Mango", quantity: 1, unit: "pcs", price: 25000, image: "./greenMango.png" },
+    { name: "Turmeric", quantity: 100, unit: "g", price: 30000, image: "./tumeric.png" },
+    { name: "Garlic", quantity: 500, unit: "g", price: 40000, image: "./garlic.png" },
+    { name: "Vermicelli", quantity: 500, unit: "g", price: 40000, image: "./vermicelli.png" },
+    { name: "Rice Paper", quantity: 500, unit: "g", price: 45000, image: "./ricePaper.png" },
+    { name: "Glutinous Rice", quantity: 1, unit: "kg", price: 30000, image: "./glutinousRice.png" },
+    { name: "Rice", quantity: 1, unit: "kg", price: 25000, image: "./rice.png" },
+    { name: "Coconut", quantity: 1, unit: "pcs", price: 20000, image: "./coconut.png" },
+    { name: "Pandan Leaves", quantity: 100, unit: "g", price: 15000, image: "./pandanLeaves.png" },
+    { name: "Corn", quantity: 1, unit: "pcs", price: 12000, image: "./corn.png" },
+    { name: "Banana", quantity: 1, unit: "pcs", price: 10000, image: "./banana.png" },
+    { name: "Fish Sauce", quantity: 500, unit: "ml", price: 30000, image: "./fishSauce.png" },
+    { name: "Soy Sauce", quantity: 500, unit: "ml", price: 25000, image: "./soySauce.png" },
+    { name: "Sugar", quantity: 1, unit: "kg", price: 20000, image: "./sugar.png" },
+    { name: "Salt", quantity: 1, unit: "kg", price: 15000, image: "./salt.png" },
+    { name: "Oil", quantity: 1, unit: "L", price: 45000, image: "./oil.png" },
+    { name: "Lime", quantity: 1, unit: "pcs", price: 5000, image: "./lime.png" },
+    { name: "Vinegar", quantity: 500, unit: "ml", price: 10000, image: "./vinegar.png" },
+    { name: "Rice Flour", quantity: 500, unit: "g", price: 20000, image: "./riceFlour.png" },
+    { name: "Cornstarch", quantity: 500, unit: "g", price: 20000, image: "./cornstarch.png" },
+    { name: "Tapioca Starch", quantity: 500, unit: "g", price: 25000, image: "./tapiocaStarch.png" },
+    { name: "Peanuts", quantity: 500, unit: "g", price: 40000, image: "./peanuts.png" },
+    { name: "Sesame Seeds", quantity: 500, unit: "g", price: 35000, image: "./sesameSeeds.png" },
+    { name: "Fried Shallots", quantity: 500, unit: "g", price: 30000, image: "./friedShallots.png" },
+    { name: "Dried Crispy Coconut", quantity: 500, unit: "g", price: 45000, image: "./driedCrispyCoconut.png" },
+    { name: "Mung Beans", quantity: 500, unit: "g", price: 20000, image: "./mungBeans.png" },
+    { name: "Dried Shrimp", quantity: 500, unit: "g", price: 50000, image: "./driedShrimp.png" }
+  ];
+  
