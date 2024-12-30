@@ -1,4 +1,4 @@
-class RecipeFactory {
+export class RecipeFactory {
     static createRecipe(region, category, name) {
       const key = `${region}_${category}`;
       const strategies = {
