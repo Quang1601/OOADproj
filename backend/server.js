@@ -2,6 +2,7 @@ import express from "express"
 import cors from "cors"
 import { connectDB } from "./config/db.js"
 import ingredientRouter from "./routes/ingredientRoute.js"
+import recipeRouter from "./routes/recipeRoute.js";
 import path from "path";
 
 // app config
@@ -16,6 +17,7 @@ app.use(cors())
 connectDB();
 
 app.use("/api/ingredient",ingredientRouter)
+app.use("/api/recipe", recipeRouter)
 
 app.get("/",(req,res)=>{
     res.send("API Working")

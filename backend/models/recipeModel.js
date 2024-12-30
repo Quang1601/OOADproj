@@ -7,10 +7,11 @@ const ingredientRecipeSchema = new mongoose.Schema({
 
 const recipeSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  rid: { type: String, required: true }, 
   category: { type: String, required: true },
-  ingredients: [ingredientRecipeSchema], 
+  region: { type: String, required: true }, 
+  ingredients: [ingredientRecipeSchema],
 });
+
 
 const recipeModel = mongoose.models.recipe || mongoose.model("recipe", recipeSchema);
 
