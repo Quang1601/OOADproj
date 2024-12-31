@@ -259,7 +259,7 @@ export const food_list = [
         ]
     }, {
         _id: "7",
-        name: "chè dừa dầm",
+        name: "Chè dừa dầm",
         image: food_7,
         price: 20,
         description: "A refreshing coconut dessert with jelly and tropical fruits.",
@@ -272,7 +272,7 @@ export const food_list = [
         ]
     }, {
         _id: "8",
-        name: "Chè trôi Broth-based",
+        name: "Chè trôi ",
         image: food_8,
         price: 15,
         description: "Sweet glutinous rice balls filled with mung bean paste, in a warm ginger syrup.",
