@@ -2,10 +2,14 @@ import recipeModel from "../models/recipeModel.js";
 import { RecipeFactory } from "../factories/RecipeFactory.js";
 
 export const addRecipe = async (req, res) => {
-  const { name, category, region, ingredients } = req.body;
+  const { name, category, region } = req.body;
 
   try {
+    const ingredients = JSON.parse(req.body.ingredients);
     const recipe = RecipeFactory.createRecipe(region, category, name);
+    if (!name || !category || !region || !ingredients || !Array.isArray(ingredients)) {
+      return res.status(400).json({ error: "Missing or invalid fields in the request." });
+    }
 
     if (ingredients) {
       ingredients.forEach(ing => recipe.addIngredient(ing.ingredientId, ing.quantity));

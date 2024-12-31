@@ -52,7 +52,58 @@ import food_31 from './food_31.png'
 import food_32 from './food_32.png'
 import food_33 from './food_33.png' 
 
-
+import egg from './egg.png'
+import quailEgg from './quailEgg.png'
+import pho_noodle from './pho_noodle.png'
+import wideRiceNoodle from './wideRiceNoodle.png'
+import roundRiceNoodle from './roundRiceNoodle.png'
+import beef from './beef.png'
+import chicken from './chicken.png'
+import duck from './duck.png'
+import pork from './pork.png'
+import mincedFish from './mincedFish.png'
+import shrimp from './shrimp.png'
+import crab from './crab.png'
+import babyClams from './babyClams.png'
+import appleSnail from './appleSnail.png'
+import beanSprouts from './beanSprouts.png'
+import mustardGreens from './mustardGreens.png'
+import cilantro from './cilantro.png'
+import thaiBasil from './thaiBasil.png'
+import mint from './mint.png'
+import scalions from './scalions.png'
+import dill from './dill.png'
+import whiteOnion from './whiteOnion.png'
+import lemongrass from './lemongrass.png'
+import ginger from './ginger.png'
+import tomatoes from './tomatoes.png'
+import greenMango from './greenMango.png'
+import tumeric from './tumeric.png'
+import garlic from './garlic.png'
+import vermicelli from './vermicelli.png'
+import ricePaper from './ricePaper.png'
+import glutinousRice from './glutinousRice.png'
+import rice from './rice.png'
+import coconut from './coconut.png'
+import pandanLeaves from './pandanLeaves.png'
+import corn from './corn.png'
+import banana from './banana.png'
+import fishSauce from './fishSauce.png'
+import soySauce from './soySauce.png'
+import sugar from './sugar.png'
+import salt from './salt.png'
+import oil from './oil.png'
+import lime from './lime.png'
+import vinegar from './vinegar.png'
+import riceFlour from './riceFlour.png'
+import cornstarch from './cornstarch.png'
+import tapiocaStarch from './tapiocaStarch.png'
+import peanuts from './peanuts.png'
+import sesameSeeds from './sesameSeeds.png'
+import friedShallots from './friedShallots.png'
+import driedCrispyCoconut from './driedCrispyCoconut.png'
+import mungBeans from './mungBeans.png'
+import driedShrimp from './driedShrimp.png'
 
 import add_icon_white from './add_icon_white.png'
 import add_icon_green from './add_icon_green.png'
@@ -116,7 +167,7 @@ export const menu_list = [
         menu_image: menu_2,
     },
     {
-        menu_name: "broth-based",
+        menu_name: "Broth-based",
         menu_image: menu_1
     },
     {
@@ -133,7 +184,7 @@ export const food_list = [
         price: 12,
         description: "A fragrant Vietnamese noodle soup with beef or chicken, served with fresh herbs and lime.",
         rid: "north",
-        category: "broth-based",
+        category: "Broth-based",
         instructions: [
             { step: 1, text: "Boil the beef bones in water for 10 minutes and drain." },
             { step: 2, text: "Roast the ginger and onions until charred, then add to the broth." },
@@ -148,7 +199,7 @@ export const food_list = [
         price: 18,
         description: "A comforting noodle dish with duck and rich, savory broth.",
         rid: "north",
-        category: "broth-based",
+        category: "Broth-based",
         instructions: [
             { step: 1, text: "Clean the duck and simmer with ginger and salt." },
             { step: 2, text: "Prepare the broth with aromatics like onions and spices." },
@@ -161,7 +212,7 @@ export const food_list = [
         price: 16,
         description: "A tangy snail noodle soup made with tomatoes and herbs, a northern delicacy.",
         rid: "north",
-        category: "broth-based",
+        category: "Broth-based",
         instructions: [
             { step: 1, text: "Clean and boil the snails with lemongrass and lime leaves." },
             { step: 2, text: "Prepare the tomato-based broth with vinegar and spices." },
@@ -221,7 +272,7 @@ export const food_list = [
         ]
     }, {
         _id: "8",
-        name: "Chè trôi broth-based",
+        name: "Chè trôi Broth-based",",
         image: food_8,
         price: 15,
         description: "Sweet glutinous rice balls filled with mung bean paste, in a warm ginger syrup.",
@@ -252,7 +303,7 @@ export const food_list = [
         price: 22,
         description: "A spicy beef noodle soup with lemongrass and chili from central Vietnam.",
         rid: "central",
-        category: "broth-based",
+        category: "Broth-based",
         instructions: [
             { step: 1, text: "Simmer beef shank, pork bones, and lemongrass to make a rich broth." },
             { step: 2, text: "Season with fish sauce, shrimp paste, and chili oil." },
@@ -265,7 +316,7 @@ export const food_list = [
         price: 10,
         description: "A flavorful noodle dish with a small amount of broth, served with herbs and crackers.",
         rid:"central",
-        category: "broth-based",
+        category: "Broth-based",
         instructions: [
             { step: 1, text: "Prepare a rich broth with chicken, shrimp, and pork." },
             { step: 2, text: "Cook noodles and top with broth, meat, and shrimp." },
@@ -278,7 +329,7 @@ export const food_list = [
         price: 12,
         description: "Thick noodles in a savory broth with snakehead fish and herbs.",
         rid: "central",
-        category: "broth-based",
+        category: "Broth-based",
         instructions: [
             { step: 1, text: "Boil snakehead fish and debone, reserving the broth." },
             { step: 2, text: "Season broth with fish sauce, turmeric, and scallions." },
@@ -384,7 +435,7 @@ export const food_list = [
         price: 15,
         description: "A savory noodle soup with pork, shrimp, and a delicate broth.",
         rid: "south",
-        category: "broth-based",
+        category: "Broth-based",
         instructions: [
             { step: 1, text: "Simmer pork bones to create a clear broth." },
             { step: 2, text: "Cook noodles and add shrimp, pork slices, and broth." },
@@ -397,7 +448,7 @@ export const food_list = [
         price: 14,
         description: "A rich and hearty crab noodle soup with thick rice noodles and fresh herbs.",
        rid: "south",
-        category: "broth-based",
+        category: "Broth-based",
         instructions: [
             { step: 1, text: "Boil crab and reserve meat and broth." },
             { step: 2, text: "Cook thick rice noodles and combine with crab meat." },
@@ -410,7 +461,7 @@ export const food_list = [
         price: 22,
         description: "A tangy and aromatic crab paste noodle soup with tomatoes and tofu.",
         rid: "south",
-        category: "broth-based",
+        category: "Broth-based",
         instructions: [
             { step: 1, text: "Prepare a crab paste base with minced crab and broth." },
             { step: 2, text: "Simmer with tomatoes, tofu, and seasoning for a tangy flavor." },
@@ -516,7 +567,7 @@ export const food_list = [
         price: 12,
         description: "A coconut milk-based noodle soup with minced fish, a southern specialty.",
         rid: "south",
-        category: "broth-based",
+        category: "Broth-based",
         instructions: [
             { step: 1, text: "Simmer minced fish in a fragrant coconut milk-based broth." },
             { step: 2, text: "Add spices like turmeric, lemongrass, and chili." },
@@ -556,7 +607,7 @@ export const food_list = [
         price: 30,
         description: "A light vegetarian noodle soup made with fresh vegetables and tofu.",
         rid: "south",
-        category: "broth-based",
+        category: "Broth-based",
         instructions: [
             { step: 1, text: "Prepare a vegetable broth with carrots, radish, and mushrooms." },
             { step: 2, text: "Add tofu, noodles, and fresh vegetables." },
