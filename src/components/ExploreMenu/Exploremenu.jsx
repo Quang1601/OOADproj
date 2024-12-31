@@ -4,7 +4,7 @@ import './Exploremenu.css';
 
 const ExploreMenu = ({ region, setRegion, category, setCategory }) => {
   const [step, setStep] = useState(1);
-          
+
   const handleRegionClick = (selectedRegion) => {
     if (region === selectedRegion) {
       
@@ -13,7 +13,6 @@ const ExploreMenu = ({ region, setRegion, category, setCategory }) => {
       setRegion(selectedRegion);
       setStep(2); 
     }
-    
   };
 
   const handleCategoryClick = (selectedCategory) => {
@@ -62,7 +61,7 @@ const ExploreMenu = ({ region, setRegion, category, setCategory }) => {
               setCategory('All'); 
             }}
           >
-            Quay lại
+            Back
           </button>
           <div className="explore-menu-list">
             {menu_list.map((item, index) => (

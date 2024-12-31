@@ -33,4 +33,5 @@ export const FoodDisplay = ({ region, category }) => {
   );
 };
 
+
 export default FoodDisplay;

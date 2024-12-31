@@ -144,17 +144,17 @@ export const assets = {
 }
 export const menu_region = [
     {
-        region_name: "Bắc",
+        region_name: "North",
        region_id: "north",
         region_image:  menu_B
     },
     {
-        region_name: "Trung",
+        region_name: "Central",
        region_id: "central",
         region_image:  menu_T
     },
     {
-        region_name: "Nam",
+        region_name: "South",
        region_id: "south",
         region_image: menu_N
     }
@@ -163,15 +163,15 @@ export const menu_region = [
 
 export const menu_list = [
     {
-        menu_name: "mặn",
+        menu_name: "Savoury",
         menu_image: menu_2,
     },
     {
-        menu_name: "nước",
+        menu_name: "Broth-based",
         menu_image: menu_1
     },
     {
-        menu_name: "tráng miệng",
+        menu_name: "Dessert",
         menu_image: menu_3
     },
   ]
@@ -184,7 +184,7 @@ export const food_list = [
         price: 12,
         description: "A fragrant Vietnamese noodle soup with beef or chicken, served with fresh herbs and lime.",
         rid: "north",
-        category: "nước",
+        category: "Broth-based",
         instructions: [
             { step: 1, text: "Boil the beef bones in water for 10 minutes and drain." },
             { step: 2, text: "Roast the ginger and onions until charred, then add to the broth." },
@@ -199,7 +199,7 @@ export const food_list = [
         price: 18,
         description: "A comforting noodle dish with duck and rich, savory broth.",
         rid: "north",
-        category: "nước",
+        category: "Broth-based",
         instructions: [
             { step: 1, text: "Clean the duck and simmer with ginger and salt." },
             { step: 2, text: "Prepare the broth with aromatics like onions and spices." },
@@ -212,7 +212,7 @@ export const food_list = [
         price: 16,
         description: "A tangy snail noodle soup made with tomatoes and herbs, a northern delicacy.",
         rid: "north",
-        category: "nước",
+        category: "Broth-based",
         instructions: [
             { step: 1, text: "Clean and boil the snails with lemongrass and lime leaves." },
             { step: 2, text: "Prepare the tomato-based broth with vinegar and spices." },
@@ -225,7 +225,7 @@ export const food_list = [
         price: 24,
         description: "Delicious rice noodle rolls filled with beef, herbs, and dipping sauce.",
         rid: "north",
-        category: "mặn",
+        category: "Savoury",
         instructions: [
             { step: 1, text: "Mix rice flour and cornstarch with water to make a smooth batter." },
             { step: 2, text: "Coat whole shrimp in batter, fry until golden and crispy." },
@@ -238,7 +238,7 @@ export const food_list = [
         price: 14,
         description: "Grilled fish marinated with turmeric and dill, served sizzling on a skillet.",
         rid: "north",
-        category: "mặn",
+        category: "Savoury",
         instructions: [
             { step: 1, text: "Mix rice flour and cornstarch with water to make a smooth batter." },
             { step: 2, text: "Coat whole shrimp in batter, fry until golden and crispy." },
@@ -251,7 +251,7 @@ export const food_list = [
         price: 12,
         description: "Crispy shrimp fritters served with tangy dipping sauce.",
         rid: "north",
-        category: "mặn",
+        category: "Savoury",
         instructions: [
             { step: 1, text: "Mix rice flour and cornstarch with water to make a smooth batter." },
             { step: 2, text: "Coat whole shrimp in batter, fry until golden and crispy." },
@@ -264,7 +264,7 @@ export const food_list = [
         price: 20,
         description: "A refreshing coconut dessert with jelly and tropical fruits.",
         rid: "north",
-        category: "tráng miệng",
+        category: "Dessert",
         instructions: [
             { step: 1, text: "Prepare coconut milk and sweeten with sugar to taste." },
             { step: 2, text: "Dice jelly and fruit; combine with sweetened coconut milk." },
@@ -272,12 +272,12 @@ export const food_list = [
         ]
     }, {
         _id: "8",
-        name: "Chè trôi nước",
+        name: "Chè trôi Broth-based",
         image: food_8,
         price: 15,
         description: "Sweet glutinous rice balls filled with mung bean paste, in a warm ginger syrup.",
        rid: "central",
-        category: "tráng miệng",
+        category: "Dessert",
         instructions: [
             { step: 1, text: "Prepare mung bean paste filling and roll into small balls." },
             { step: 2, text: "Wrap glutinous rice dough around the filling, forming smooth balls." },
@@ -290,7 +290,7 @@ export const food_list = [
         price: 14,
         description: "A crunchy snack of rice paper topped with mung bean and sugar.",
         rid: "north",
-        category: "tráng miệng",
+        category: "Dessert",
         instructions: [
             { step: 1, text: "Prepare mung bean paste and spread onto crispy rice paper." },
             { step: 2, text: "Sprinkle sugar evenly across the top." },
@@ -303,7 +303,7 @@ export const food_list = [
         price: 22,
         description: "A spicy beef noodle soup with lemongrass and chili from central Vietnam.",
         rid: "central",
-        category: "nước",
+        category: "Broth-based",
         instructions: [
             { step: 1, text: "Simmer beef shank, pork bones, and lemongrass to make a rich broth." },
             { step: 2, text: "Season with fish sauce, shrimp paste, and chili oil." },
@@ -316,7 +316,7 @@ export const food_list = [
         price: 10,
         description: "A flavorful noodle dish with a small amount of broth, served with herbs and crackers.",
         rid:"central",
-        category: "nước",
+        category: "Broth-based",
         instructions: [
             { step: 1, text: "Prepare a rich broth with chicken, shrimp, and pork." },
             { step: 2, text: "Cook noodles and top with broth, meat, and shrimp." },
@@ -329,7 +329,7 @@ export const food_list = [
         price: 12,
         description: "Thick noodles in a savory broth with snakehead fish and herbs.",
         rid: "central",
-        category: "nước",
+        category: "Broth-based",
         instructions: [
             { step: 1, text: "Boil snakehead fish and debone, reserving the broth." },
             { step: 2, text: "Season broth with fish sauce, turmeric, and scallions." },
@@ -343,7 +343,7 @@ export const food_list = [
         price: 12,
         description: "Crispy Vietnamese pancakes filled with shrimp, pork, and bean sprouts.",
         rid: "central",
-        category: "mặn",
+        category: "Savoury",
         instructions: [
             { step: 1, text: "Mix rice flour, coconut milk, and turmeric to create the batter." },
             { step: 2, text: "Pour batter onto a hot skillet, then add shrimp, pork, and bean sprouts." },
@@ -357,7 +357,7 @@ export const food_list = [
         price: 18,
         description: "Small savory pancakes topped with shrimp or pork, served with dipping sauce.",
         rid: "central",
-        category: "mặn",
+        category: "Savoury",
         instructions: [
             { step: 1, text: "Prepare batter using rice flour and water." },
             { step: 2, text: "Cook batter in small molds, adding shrimp or pork as topping." },
@@ -370,7 +370,7 @@ export const food_list = [
         price: 16,
         description: "A unique dish of rice topped with baby clams and crunchy toppings.",
         rid: "central",
-        category: "mặn",
+        category: "Savoury",
         instructions: [
             { step: 1, text: "Clean and cook baby clams, reserving the broth." },
             { step: 2, text: "Serve cooked clams over rice with peanuts, fried shallots, and herbs." },
@@ -383,7 +383,7 @@ export const food_list = [
         price: 24,
         description: "Hoi An’s iconic noodle dish with pork and crispy crackers.",
         rid: "central",
-        category: "mặn",
+        category: "Savoury",
         instructions: [
             { step: 1, text: "Prepare noodles with a unique lye water soak for texture." },
             { step: 2, text: "Top noodles with slices of char siu pork and fresh greens." },
@@ -396,7 +396,7 @@ export const food_list = [
         price: 14,
         description: "A sweet corn dessert with creamy coconut sauce.",
         rid: "central",
-        category: "tráng miệng",
+        category: "Dessert",
         instructions: [
             { step: 1, text: "Cook corn kernels in water until soft and sweet." },
             { step: 2, text: "Sweeten with sugar and thicken with tapioca starch." },
@@ -409,7 +409,7 @@ export const food_list = [
         price: 12,
         description: "Crispy deep-fried bananas, a popular street snack.",
         rid: "central",
-        category: "tráng miệng",
+        category: "Dessert",
         instructions: [
             { step: 1, text: "Flatten ripe bananas slightly for even frying." },
             { step: 2, text: "Coat bananas with a batter made of rice flour and water." },
@@ -422,7 +422,7 @@ export const food_list = [
         price: 20,
         description: "A Southern specialty with noodles and fresh seafood, mixed tableside.",
         rid: "south",
-        category: "mặn",
+        category: "Savoury",
         instructions: [
             { step: 1, text: "Prepare fresh noodles and seafood broth." },
             { step: 2, text: "Serve with shrimp, squid, and fresh herbs." },
@@ -435,7 +435,7 @@ export const food_list = [
         price: 15,
         description: "A savory noodle soup with pork, shrimp, and a delicate broth.",
         rid: "south",
-        category: "nước",
+        category: "Broth-based",
         instructions: [
             { step: 1, text: "Simmer pork bones to create a clear broth." },
             { step: 2, text: "Cook noodles and add shrimp, pork slices, and broth." },
@@ -448,7 +448,7 @@ export const food_list = [
         price: 14,
         description: "A rich and hearty crab noodle soup with thick rice noodles and fresh herbs.",
        rid: "south",
-        category: "nước",
+        category: "Broth-based",
         instructions: [
             { step: 1, text: "Boil crab and reserve meat and broth." },
             { step: 2, text: "Cook thick rice noodles and combine with crab meat." },
@@ -461,7 +461,7 @@ export const food_list = [
         price: 22,
         description: "A tangy and aromatic crab paste noodle soup with tomatoes and tofu.",
         rid: "south",
-        category: "nước",
+        category: "Broth-based",
         instructions: [
             { step: 1, text: "Prepare a crab paste base with minced crab and broth." },
             { step: 2, text: "Simmer with tomatoes, tofu, and seasoning for a tangy flavor." },
@@ -474,7 +474,7 @@ export const food_list = [
         price: 10,
         description: "Broken rice served with grilled pork, egg, and pickled vegetables, a southern classic.",
         rid: "south",
-        category: "mặn",
+        category: "Savoury",
         instructions: [
             { step: 1, text: "Cook broken rice until soft and fluffy." },
             { step: 2, text: "Grill pork chops and fry eggs." },
@@ -487,7 +487,7 @@ export const food_list = [
         price: 12,
         description: "Stir-fried beef with tangy pickled mustard greens, perfect with steamed rice.",
         rid: "south",
-        category: "mặn",
+        category: "Savoury",
         instructions: [
             { step: 1, text: "Slice beef thinly and marinate with soy sauce and garlic." },
             { step: 2, text: "Stir-fry beef quickly, then add pickled mustard greens." },
@@ -501,7 +501,7 @@ export const food_list = [
         price: 12,
         description: "Caramelized pork belly and boiled eggs simmered in a sweet-savory sauce.",
         rid: "south",
-        category: "mặn",
+        category: "Savoury",
         instructions: [
             { step: 1, text: "Caramelize sugar, then add pork belly and cook until browned." },
             { step: 2, text: "Add coconut water, fish sauce, and boiled eggs." },
@@ -515,7 +515,7 @@ export const food_list = [
         price: 18,
         description: "Sweet and sour braised pork ribs, a comforting family favorite.",
         rid: "south",
-        category: "mặn",
+        category: "Savoury",
         instructions: [
             { step: 1, text: "Marinate pork ribs with garlic, sugar, and fish sauce." },
             { step: 2, text: "Cook ribs until browned, then add a sweet-sour sauce." },
@@ -528,7 +528,7 @@ export const food_list = [
         price: 16,
         description: "A layered steamed dessert made with pandan and mung beans.",
         rid: "south",
-        category: "tráng miệng",
+        category: "Dessert",
         instructions: [
             { step: 1, text: "Blend pandan leaves for juice, and cook mung beans until soft." },
             { step: 2, text: "Layer the batter and mung bean paste in a steamer." },
@@ -541,7 +541,7 @@ export const food_list = [
         price: 24,
         description: "Sweet spring rolls filled with shredded coconut, sugar, and sesame seeds.",
         rid: "south",
-        category: "tráng miệng",
+        category: "Dessert",
         instructions: [
             { step: 1, text: "Mix shredded coconut with sugar and roasted sesame seeds." },
             { step: 2, text: "Place the mixture on rice paper and roll tightly." },
@@ -554,7 +554,7 @@ export const food_list = [
         price: 14,
         description: "A popular street snack of mixed rice paper with dried shrimp, mango, and herbs.",
         rid: "south",
-        category: "tráng miệng",
+        category: "Dessert",
         instructions: [
             { step: 1, text: "Cut rice paper into strips and mix with dried shrimp and mango." },
             { step: 2, text: "Add chili sauce, lime juice, and peanuts." },
@@ -567,7 +567,7 @@ export const food_list = [
         price: 12,
         description: "A coconut milk-based noodle soup with minced fish, a southern specialty.",
         rid: "south",
-        category: "nước",
+        category: "Broth-based",
         instructions: [
             { step: 1, text: "Simmer minced fish in a fragrant coconut milk-based broth." },
             { step: 2, text: "Add spices like turmeric, lemongrass, and chili." },
@@ -580,7 +580,7 @@ export const food_list = [
         price: 20,
         description: "Grilled pork served with vermicelli noodles, herbs, and a tangy dipping sauce.",
         rid: "north",
-        category: "mặn",
+        category: "Savoury",
         instructions: [
             { step: 1, text: "Grill marinated pork patties and slices until charred." },
             { step: 2, text: "Prepare a tangy dipping sauce with fish sauce, vinegar, and sugar." },
@@ -593,7 +593,7 @@ export const food_list = [
         price: 15,
         description: "A traditional square rice cake filled with pork and mung beans, wrapped in banana leaves.",
         rid: "north",
-        category: "mặn",
+        category: "Savoury",
         instructions: [
             { step: 1, text: "Soak sticky rice and mung beans overnight." },
             { step: 2, text: "Layer rice, pork, and mung beans, then wrap in banana leaves." },
@@ -607,7 +607,7 @@ export const food_list = [
         price: 30,
         description: "A light vegetarian noodle soup made with fresh vegetables and tofu.",
         rid: "south",
-        category: "nước",
+        category: "Broth-based",
         instructions: [
             { step: 1, text: "Prepare a vegetable broth with carrots, radish, and mushrooms." },
             { step: 2, text: "Add tofu, noodles, and fresh vegetables." },
