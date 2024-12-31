@@ -272,7 +272,7 @@ export const food_list = [
         ]
     }, {
         _id: "8",
-        name: "Chè trôi Broth-based",",
+        name: "Chè trôi Broth-based",
         image: food_8,
         price: 15,
         description: "Sweet glutinous rice balls filled with mung bean paste, in a warm ginger syrup.",
