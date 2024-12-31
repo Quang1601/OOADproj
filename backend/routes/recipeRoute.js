@@ -1,10 +1,11 @@
 import express from 'express';
 import {addRecipe, getRecipesByRegionAndCategory, updateRecipe, deleteRecipe,deleteAllRecipes,} from "../controllers/recipeController.js";
+import multer from "multer"
 
 const router = express.Router();
+const upload = multer();
 
-
-router.post("/add", addRecipe);
+router.post("/add", upload.none(), addRecipe);
 
 
 router.get("/find/:region/:category", getRecipesByRegionAndCategory);
