@@ -30,6 +30,22 @@ export const addRecipe = async (req, res) => {
   }
 };
 
+export const getRecipeById = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const recipe = await recipeModel.findById(id).populate("ingredients.ingredientId");
+    if (!recipe) {
+      return res.status(404).json({ error: "Recipe not found." });
+    }
+
+    res.status(200).json(recipe);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+
 export const getRecipesByRegionAndCategory = async (req, res) => {
   const { region, category } = req.params;
 

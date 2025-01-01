@@ -1,54 +1,71 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { food_list } from '../../assets/assets/frontend_assets/assets';
-import './Recipe.css'
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import "./Recipe.css";
+
 const Recipe = () => {
-  const { id } = useParams();
+  const { id } = useParams(); 
   const [recipe, setRecipe] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const selectedFood = food_list.find((item) => item._id === id);
-    setRecipe(selectedFood);
+    const fetchRecipe = async () => {
+      try {
+        const response = await fetch(`http://localhost:4000/api/recipe/find/${id}`);
+        if (!response.ok) {
+          throw new Error("Failed to fetch recipe");
+        }
+        const data = await response.json();
+        setRecipe(data);
+      } catch (error) {
+        console.error(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchRecipe();
   }, [id]);
 
-  const handleOrderIngredients = () => {
-    navigate('/order', { state: { ingredients: recipe.ingredients } });
-  };
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   if (!recipe) {
-    return <div>Loading...</div>; 
+    return <div>Recipe not found.</div>;
   }
 
   return (
     <div className="recipe-page">
       <h1>{recipe.name}</h1>
       <img src={recipe.image} alt={recipe.name} />
-      
-
       <h3>Ingredients:</h3>
-      {recipe.ingredients && recipe.ingredients.length > 0 ? ( 
+      {recipe.ingredients && recipe.ingredients.length > 0 ? (
         <ul>
           {recipe.ingredients.map((ingredient, index) => (
-            <li key={index}>{ingredient}</li>
+            <li key={index}>
+              <div className="ingredient-item">
+                <span>{ingredient.ingredientId.name}</span>
+                <img src={`http://localhost:4000/recipe${ingredient.ingredientId.image}`} alt={ingredient.ingredientId.name} />
+
+                <span>{ingredient.quantity} {ingredient.ingredientId.unit}</span>
+              </div>
+            </li>
           ))}
         </ul>
       ) : (
-        <p>No ingredients listed.</p> 
+        <p>No ingredients listed.</p>
       )}
 
       <h3>Instructions:</h3>
-      {recipe.instructions && recipe.instructions.length > 0 ? ( 
+      {recipe.instructions && recipe.instructions.length > 0 ? (
         <ol>
           {recipe.instructions.map((step, index) => (
-            <li key={index}>{step.text}</li> 
+            <li key={index}>{step}</li>
           ))}
         </ol>
       ) : (
-        <p>No instructions available.</p> 
+        <p>No instructions available.</p>
       )}
-      <button className="recipe-btn" onClick={handleOrderIngredients}>
-        Order Ingredients
-      </button>
     </div>
   );
 };

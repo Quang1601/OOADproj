@@ -27,3 +27,4 @@ node_modules/
 /backend/uploads
 backend/uploads/1735543441336egg.png
 backend/uploads/1735543441336egg.png
+src/package.json
