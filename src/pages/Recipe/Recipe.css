@@ -121,18 +121,18 @@
   }
   
   .ingredient-panel {
-    display: flex; /* Flexbox for horizontal alignment */
-    align-items: center; /* Center items vertically */
-    justify-content: space-evenly; /* Equal spacing between elements */
+    display: flex; 
+    align-items: center;
+    justify-content: space-evenly; 
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 20px;
-    width: 100%; /* Allow the panel to take full width */
-    max-width: 1200px; /* Prevent it from becoming too wide */
+    width: 100%; 
+    max-width: 1200px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 0 auto; /* Center the panel horizontally */
-    flex-wrap: nowrap; /* Keep everything in one row */
+    margin: 0 auto;
+    flex-wrap: nowrap; 
     overflow-x: auto;
 } 
   .ingredient-info {
