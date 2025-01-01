@@ -111,3 +111,24 @@ export const deleteAllRecipes = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+export const calculateRecipePrice = async (recipeId) => {
+  try {
+    const recipe = await recipeModel.findById(recipeId).populate("_id");
+
+    if (!recipe) {
+      throw new Error("Recipe not found.");
+    }
+
+    let totalPrice = 0;
+
+    recipe.ingredients.forEach((ingredient) => {
+      const ingredientPricePerUnit = ingredient.ingredientId.price;
+      const ingredientQuantity = ingredient.quantity;
+      totalPrice += ingredientPricePerUnit * ingredientQuantity;
+    });
+    return totalPrice;
+  } catch (error) {
+    throw new Error(error.message);
+  }
+};

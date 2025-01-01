@@ -10,9 +10,6 @@ const Navbar = ({setShowLogin}) => {
       <Link to='/'>
       <img src={assets.logo} alt="" className="logo"/></Link>
       <ul className="navbar-menu">
-      
-    
-        
         <a href='/' onClick={()=>setMenu("menu")}className={menu==="menu"?"active":""}>menu</a>
         
       </ul>
