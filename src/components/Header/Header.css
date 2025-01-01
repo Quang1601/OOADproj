@@ -2,7 +2,7 @@
     
     height: 34vw;
     margin: 30px auto;
-    background:url('/ioi.png') no-repeat;
+    background:url('/src/assets/assets/frontend_assets/header.png') no-repeat;
   
     position: relative;
     
@@ -30,7 +30,7 @@
   
 }
 .header-contents p{
-    color: black;
+    color: whitesmoke;
     font-size: clamp(1.5vw, 0.75vw, 10vw);
 }
 .header-contents button{

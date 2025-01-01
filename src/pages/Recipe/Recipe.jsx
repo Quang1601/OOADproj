@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { food_list } from "../../assets/assets/frontend_assets/assets"; 
 import "./Recipe.css";
 
-const handleOrderIngredients = () => {
-  navigate('/order', { state: { ingredients: recipe.ingredients } });
-};
+
 
 const Recipe = () => {
   const { id } = useParams();
   const [recipe, setRecipe] = useState(null);
   const [loading, setLoading] = useState(true);
+  let navigate = useNavigate();
+
+  const handleOrderIngredients = () => {
+    navigate('/order', { state: { ingredients: recipe.ingredients } });
+  };
 
   useEffect(() => {
     const fetchRecipe = async () => {
@@ -49,23 +52,22 @@ const Recipe = () => {
   return (
     <div className="recipe-page">
       <h1>{recipe.name}</h1>
-      <img src={recipe.image} alt={recipe.name} />
+      <img src={recipe.image} alt={recipe.name}/>
       <h3>Ingredients:</h3>
       {recipe.ingredients && recipe.ingredients.length > 0 ? (
-        <ul>
+      <ul >
           {recipe.ingredients.map((ingredient, index) => (
-            <li key={index}>
-              <div className="ingredient-item">
-                <span>{ingredient.ingredientId.name}</span>
+            <li key={index} className="ingredient-list">
+                <p>{ingredient.ingredientId.name}: {ingredient.quantity}{ingredient.ingredientId.unit}</p>
                 <img
+                  className="ingredient-image"
                   src={`http://localhost:4000/recipe${ingredient.ingredientId.image}`}
                   alt={ingredient.ingredientId.name}
                 />
-                <span>{ingredient.quantity} {ingredient.ingredientId.unit}</span>
-              </div>
+                <br /><br />
             </li>
           ))}
-        </ul>
+      </ul>
       ) : (
         <p>No ingredients listed.</p>
       )}
