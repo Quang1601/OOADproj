@@ -3,6 +3,10 @@ import { useParams } from "react-router-dom";
 import { food_list } from "../../assets/assets/frontend_assets/assets"; 
 import "./Recipe.css";
 
+const handleOrderIngredients = () => {
+  navigate('/order', { state: { ingredients: recipe.ingredients } });
+};
+
 const Recipe = () => {
   const { id } = useParams();
   const [recipe, setRecipe] = useState(null);
@@ -76,6 +80,9 @@ const Recipe = () => {
       ) : (
         <p>No instructions available.</p>
       )}
+      <button className="order-buton" onClick={handleOrderIngredients}>
+        Order Ingredients
+      </button>
     </div>
   );
 };

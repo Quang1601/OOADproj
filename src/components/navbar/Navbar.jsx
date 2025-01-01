@@ -13,7 +13,7 @@ const Navbar = ({setShowLogin}) => {
       
     
         
-        <a href='#explore-menu' onClick={()=>setMenu("menu")}className={menu==="menu"?"active":""}>menu</a>
+        <a href='/' onClick={()=>setMenu("menu")}className={menu==="menu"?"active":""}>menu</a>
         
       </ul>
       
@@ -24,9 +24,7 @@ const Navbar = ({setShowLogin}) => {
       <img src={assets.basket_icon} alt="" /></Link>
       <div className="dot"></div>
     </div>
-<button onClick={()=>setShowLogin(true)}> 
-    sign in 
-</button>
+
 </div>
     </div>
   )
