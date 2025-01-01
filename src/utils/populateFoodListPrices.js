@@ -6,9 +6,10 @@ export const populateFoodListPrices = async (food_list) => {
             try {
                 const price = await fetchRecipePrice(foodItem._id);
                 console.log(price);
-                return { ...foodItem, 2 };
+                return { ...foodItem, price: price };
             } catch (error) {
                 console.error(`Error fetching price for ${foodItem.name}:`, error.message);
+                console.log(error)
                 return { ...foodItem, price: 0 };
             }
         })

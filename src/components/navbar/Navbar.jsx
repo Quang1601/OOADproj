@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import'./Navbar.css'
 import {assets} from '../../assets/assets/frontend_assets/assets'
 import{Link} from 'react-router-dom';
+
 const Navbar = ({setShowLogin}) => {
   const[menu,setMenu]= useState("menu");
   
@@ -15,7 +16,8 @@ const Navbar = ({setShowLogin}) => {
       </ul>
       
 <div className="navbar-right">
-    <img src={assets.search_icon} alt=""  />
+    {/* <img src={assets.search_icon} alt=""  /> */}
+    
     <div className="navbar-search-icon">
       <Link to='/cart'>
       <img src={assets.basket_icon} alt="" /></Link>

@@ -1,0 +1,3 @@
+# GET http://localhost:4000/api/ingredient/list
+
+GET http://localhost:4000/api/recipe/find/6773c1ee87bb84b93f58aa70

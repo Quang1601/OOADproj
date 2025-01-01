@@ -114,8 +114,7 @@ export const deleteAllRecipes = async (req, res) => {
 
 export const calculateRecipePrice = async (recipeId) => {
   try {
-    const recipe = await recipeModel.findById(recipeId).populate("_id");
-
+    const recipe = await recipeModel.findById(recipeId).populate("ingredients.ingredientId");
     if (!recipe) {
       throw new Error("Recipe not found.");
     }

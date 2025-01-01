@@ -28,8 +28,9 @@ const __dirname = path.resolve();
 app.use("/recipe/uploads", express.static(path.join(__dirname, "uploads")));
 app.get('/api/recipes/:id/price', async (req, res) => {
     const recipeId = req.params.id;
+
     try {
-      const price = calculateRecipePrice(recipeId); 
+      const price = await calculateRecipePrice(recipeId); 
       res.json({ price });
     } catch (error) {
       console.error('Error calculating price:', error.message);
