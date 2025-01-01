@@ -3,9 +3,10 @@ import './FoodDisplay.css';
 import { StoreContext } from '../../content/StoreContext';
 import FoodItem from '../FoodItem/FoodItem';
 
-export const FoodDisplay = ({ region, category }) => {
-  const { food_list } = useContext(StoreContext);
 
+export const FoodDisplay = ({ region, category, price}) => {
+  const { food_list } = useContext(StoreContext);
+  
   return (
     <div className="food-display" id="food-display">
       <h2>Top dishes near you</h2>
@@ -13,7 +14,8 @@ export const FoodDisplay = ({ region, category }) => {
         {food_list.map((item, index) => {
           if (
             (region === 'All' || region === item.rid) &&
-            (category === 'All' || category === item.category)
+            (category === 'All' || category === item.category) &&
+            (item.price <= price)
           ) {
             return (
               <FoodItem
