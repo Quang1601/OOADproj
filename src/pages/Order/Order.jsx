@@ -27,25 +27,27 @@ const Order = () => {
       <h1>Order Ingredients</h1>
       {ingredients.length > 0 ? (
         <ul>
-          {ingredients.map((ingredient, index) => (
-            <li key={`${ingredient._id}`}>
-              {ingredient.ingredientId.name}: {ingredient.quantity}{ingredient.ingredientId.unit}
+          {ingredients.map((ingredient) => (
+            <li key={ingredient._id}>
+              {ingredient.ingredientId.name}: {ingredient.quantity}
+              {ingredient.ingredientId.unit}
               <br />
-              Price: {ingredient.quantity/ingredient.ingredientId.quantity*ingredient.ingredientId.price}VND
-              <button
-                className="order-btn"
-                onClick={() => handleAddToCart(ingredient)}
-                >
-                Add to Cart
-              </button>
+              Price:{" "}
+              {(
+                (ingredient.quantity / ingredient.ingredientId.quantity) *
+                ingredient.ingredientId.price
+              ).toFixed(2)}{" "}
+              VND
             </li>
           ))}
         </ul>
       ) : (
         <p>No ingredients available to order.</p>
       )}
-      <h3>Total: {calculateTotalPrice()}VND</h3>
-      
+      <h3>Total: {calculateTotalPrice().toFixed(2)} VND</h3>
+      <button className="order-btn" onClick={handleAddToCart}>
+        Add All to Cart
+      </button>
     </div>
   );
 };
