@@ -9,7 +9,7 @@ import FillingBudget from '../../components/FillingBudget/fillingBudget'
 const Home = () => {
   const [category,setCategory]= useState("All")
   const [region,setRegion] = useState('All');
-  const [price,setPrice] = useState(1000)
+  const [price,setPrice] = useState(10000000000);
 
 
 
