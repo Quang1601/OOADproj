@@ -44,9 +44,8 @@ const Cart = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ cartId }),
       });
-      clearCart();
       alert('Cart canceled successfully');
-      navigate('/order');
+      navigate('/');
     } catch (error) {
       console.error('Error canceling cart:', error);
       alert('Failed to cancel cart.');
