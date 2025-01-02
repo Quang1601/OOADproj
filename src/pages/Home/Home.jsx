@@ -16,9 +16,10 @@ const Home = () => {
   return (
     <div>
       <Header/>
-      <FillingBudget budget={price} setBudget={setPrice}/>
+   
       <ExploreMenu region={region}
         setRegion={setRegion} category={category} setCategory={setCategory}/>
+           <FillingBudget budget={price} setBudget={setPrice}/>
       <FoodDisplay   region={region} category={category} price={price}/>
            
     </div>

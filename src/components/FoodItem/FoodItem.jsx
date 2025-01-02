@@ -9,6 +9,10 @@ const FoodItem = ({ id, name, price, description, image }) => {
     const handleSelectClick = () => {
         navigate(`/recipe/${id}`);
       };
+      const Prices = new Intl.NumberFormat("vi-VN", {
+        style: "currency",
+        currency: "VND",
+      }).format(price);
    
     const{cartItems,addToCart,removeFromCart}= useContext(StoreContext);
     return (
@@ -24,7 +28,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
 
                 </div>
                 <p className='food-item-desc'>{description}</p>
-                <p className='food-item-price'>{price}VND</p>
+                <p className='food-item-price'>{Prices}</p>
                 <button className="food-item-select-button" onClick={handleSelectClick}>Select</button>
             </div>
         </div>

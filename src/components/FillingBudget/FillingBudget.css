@@ -1,0 +1,16 @@
+label{
+    color: black;
+    font-size: 25px;
+    text-transform: capitalize;
+}
+input{
+    
+    padding: 10px;
+    margin:10px;
+    border-radius: 5px;
+    border: 1px solid black;
+
+}
+div{
+    margin: 10px;
+}

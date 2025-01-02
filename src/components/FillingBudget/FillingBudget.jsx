@@ -1,4 +1,5 @@
 import React,{ useEffect, useState, useContext } from "react"
+import './FillingBudget.css';
 
 function FillingBudget({budget,setBudget}) {
 
@@ -9,7 +10,7 @@ function FillingBudget({budget,setBudget}) {
 
     return(
         <div>
-            <label htmlFor="budget-field">Enter your budget</label>
+            <label htmlFor="budget-field">Enter your budget:</label>
             <input type="number" id="budget-field" onChange={handleBudgetChange}/>
         </div>
     );
