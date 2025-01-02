@@ -1,14 +1,38 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
 import './Order.css';
+import React, { useState } from 'react';
+import { useLocation,useNavigate } from 'react-router-dom';
 
 const Order = () => {
   const location = useLocation();
-  const ingredients = location.state.ingredients;
-
+  const navigate = useNavigate();
+  const ingredients = location.state.ingredients || [];
+  const [cartCreated, setCartCreated] = useState(false);
   
-  const handleAddToCart = (ingredient) => {
-    console.log(`${ingredient} added to cart!`);
+  const handleAddToCart = async () => {
+    const items = ingredients.map(ingredient => ({
+      ingredientId: ingredient.ingredientId._id,
+      quantity: ingredient.quantity,
+    }));
+    const totalPrice = calculateTotalPrice();
+    try {
+      const response = await fetch('http://localhost:4000/api/cart/add', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ items, totalPrice }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to add items to cart');
+      }
+
+      const result = await response.json();
+      setCartCreated(true);
+      navigate('/cart', { state: { cartId: result.cart._id } });
+    } catch (error) {
+      console.error('Error adding to cart:', error.message);
+    }
   };
   
   let totalPrice = 0;
@@ -49,8 +73,11 @@ const Order = () => {
         <p>No ingredients available to order.</p>
       )}
       <h3>Total: {calculateTotalPrice().toFixed(2)} VND</h3>
-      <button className="order-btn" onClick={handleAddToCart}>
-        Add All to Cart
+      <button className="order-btn" onClick={() => {
+              handleAddToCart(); 
+            }}
+            disabled={cartCreated}>
+        {cartCreated ? 'Cart Created' : 'Add All to Cart'}
       </button>
     </div>
   );

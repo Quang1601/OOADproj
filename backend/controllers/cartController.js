@@ -18,7 +18,6 @@ export const addCart = async (req, res) => {
     });
 
     await newCart.save();
-
     res.status(201).json({ message: "Cart created successfully", cart: newCart });
   } catch (error) {
     res.status(500).json({ error: error.message });
