@@ -18,9 +18,11 @@
 }
 .order-page li{
     display: grid;
-    grid-template-columns: 2.5fr 2.5fr 1.25fr 1fr    ;
+    grid-template-columns: 3fr 2.5fr 0.75fr;
+    margin-top: 5px;
     align-items: center;
     color: black;
     font-size: max(1.5vw,12px);
+    
 }
 
