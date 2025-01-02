@@ -53,6 +53,7 @@ const Order = () => {
   let totalPrice = 0;
 
   function calculateTotalPrice() {
+    totalPrice = 0 ;
     ingredients.forEach(function (ingredient) {
       totalPrice += ingredient.ingredientId.price * (ingredient.quantity / ingredient.ingredientId.quantity);
     });

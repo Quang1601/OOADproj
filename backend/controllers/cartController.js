@@ -39,3 +39,18 @@ export const removeCart = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+export const getCart = async (req, res) => {
+  const { cartId } = req.params;
+
+  try {
+    const cart = await cartModel.findById(cartId).populate('items.ingredientId');
+    if (!cart) {
+      return res.status(404).json({ error: "Cart not found" });
+    }
+
+    res.status(200).json({ cart });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};

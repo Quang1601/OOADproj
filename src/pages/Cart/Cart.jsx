@@ -1,21 +1,48 @@
-import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { StoreContext } from '../../content/StoreContext';
 import './Cart.css';
 
 const Cart = () => {
-  const { cartItems, food_list, clearCart } = useContext(StoreContext);
+  const location = useLocation();
   const navigate = useNavigate();
+  const cartId = location.state?.cartId;
+  const initialItems = location.state?.ingredients || [];
+  const [cartDetails, setCartDetails] = useState(null);
+  const [items, setItems] = useState(initialItems);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchCartDetails = async () => {
+      if (cartId) {
+        try {
+          const response = await fetch(`http://localhost:4000/api/cart/find/${cartId}`);
+          if (!response.ok) throw new Error('Failed to fetch cart details');
+          const data = await response.json();
+          setCartDetails(data.cart);
+        } catch (error) {
+          console.error('Error fetching cart details:', error);
+        } finally {
+          setLoading(false);
+        }
+      } else {
+        setLoading(false);
+      }
+    };
+
+    fetchCartDetails();
+  }, [cartId]);
 
   const handleBack = () => {
-    navigate('/order', { state: { ingredients: cartItems } }); 
+    navigate(-1, { state: { ingredients: items } });
   };
 
   const handleCancelCart = async () => {
     try {
-      await fetch('http://localhost:4000/api/cart/remove', {
+      await fetch('http://localhost:4000/api/cart/delete', {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ cartId }),
       });
       clearCart();
       alert('Cart canceled successfully');
@@ -26,6 +53,18 @@ const Cart = () => {
     }
   };
 
+  if (loading) {
+    return <p>Loading cart...</p>;
+  }
+
+  if (!cartDetails) {
+    return <p>Cart not found. Please try again.</p>;
+  }
+
+  const deliveryFee = 2;
+  const subtotal = cartDetails.totalPrice;
+  const total = subtotal + deliveryFee;
+
   return (
     <div className="cart">
       <button className="back-btn" onClick={handleBack}>
@@ -34,15 +73,15 @@ const Cart = () => {
       <div className="cart-summary">
         <div className="cart-summary-row">
           <p>Subtotal:</p>
-          <p>{0} VND</p>
+          <p>{subtotal.toFixed(2)} VND</p>
         </div>
         <div className="cart-summary-row">
           <p>Delivery Fee:</p>
-          <p>{2} VND</p>
+          <p>{deliveryFee.toFixed(2)} VND</p>
         </div>
         <div className="cart-summary-row total-row">
           <b>Total:</b>
-          <b>{2} VND</b>
+          <b>{total.toFixed(2)} VND</b>
         </div>
       </div>
       <div className="customer-details">
