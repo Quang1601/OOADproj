@@ -1,0 +1,26 @@
+.order-page{
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 20px;
+    background-color: #f9f9f9;
+   
+}
+.order-btn {
+    background-color: #f04e30;
+    color:black;
+  
+    padding: 8px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.order-page li{
+    display: grid;
+    grid-template-columns: 2.5fr 2.5fr 1.25fr 1fr    ;
+    align-items: center;
+    color: black;
+    font-size: max(1.5vw,12px);
+}
+

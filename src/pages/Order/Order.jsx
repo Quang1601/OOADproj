@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import './Order.css';
 
 const Order = () => {
   const location = useLocation();
@@ -25,25 +26,35 @@ const Order = () => {
   return (
     <div className="order-page">
       <h1>Order Ingredients</h1>
+     
       {ingredients.length > 0 ? (
         <ul>
+
           {ingredients.map((ingredient, index) => (
             <li key={`${ingredient._id}`}>
-              {ingredient.ingredientId.name}: {ingredient.quantity}{ingredient.ingredientId.unit}
-              <br />
-              Price: {ingredient.quantity/ingredient.ingredientId.quantity*ingredient.ingredientId.price}VND
-              <button
+            
+              <p>{ingredient.ingredientId.name}: {ingredient.quantity} {ingredient.ingredientId.unit}</p>
+            
+
+           <p> Price: {ingredient.quantity/ingredient.ingredientId.quantity*ingredient.ingredientId.price}VND</p>
+             <button
                 className="order-btn"
                 onClick={() => handleAddToCart(ingredient)}
                 >
                 Add to Cart
               </button>
+              <br/>
             </li>
+            
           ))}
+          <hr/>
         </ul>
       ) : (
         <p>No ingredients available to order.</p>
-      )}
+        
+      )
+        }
+      
       <h3>Total: {calculateTotalPrice()}VND</h3>
       
     </div>
