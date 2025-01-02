@@ -122,7 +122,7 @@ export const calculateRecipePrice = async (recipeId) => {
     let totalPrice = 0;
 
     recipe.ingredients.forEach((ingredient) => {
-      const ingredientPricePerUnit = ingredient.ingredientId.price;
+      const ingredientPricePerUnit = ingredient.ingredientId.price / ingredient.ingredientId.quantity;
       const ingredientQuantity = ingredient.quantity;
       totalPrice += ingredientPricePerUnit * ingredientQuantity;
     });
