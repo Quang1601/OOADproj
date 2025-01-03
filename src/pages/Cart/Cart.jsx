@@ -93,6 +93,17 @@ const Cart = () => {
 
       if (!response.ok) throw new Error('Failed to create order');
       alert('Order created successfully');
+      const data = await response.json();
+      const currentDate = new Date();
+      const deliveryDate = new Date();
+      deliveryDate.setDate(currentDate.getDate() + 3);
+      navigate("/checkout", {
+        state: {
+          name,
+          deliveryDate: deliveryDate.toDateString(),
+        },
+      });
+
     } catch (error) {
       console.error('Error creating order:', error);
       alert('Failed to create order.');
