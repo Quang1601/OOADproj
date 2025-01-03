@@ -86,7 +86,7 @@ const Cart = () => {
         body: JSON.stringify({
           cartId,
           customerDetails: { name, phone, location },
-          total: cartDetails.totalPrice + 2,
+          total: cartDetails.totalPrice + 10000,
           orderDate: new Date().toISOString(),
         }),
       });
@@ -110,7 +110,7 @@ const Cart = () => {
     }
   };
 
-  const deliveryFee = 2;
+  const deliveryFee = 10000;
   const subtotal = cartDetails.totalPrice;
   const total = subtotal + deliveryFee;
 
