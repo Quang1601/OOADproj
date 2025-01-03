@@ -23,6 +23,20 @@ const Order = () => {
     }
   }, [ingredients, navigate]);
 
+  useEffect(() => {
+    if (ingredients.length > 0) {
+      localStorage.setItem('orderIngredients', JSON.stringify(ingredients));
+      console.log(localStorage)
+    }
+  }, []);
+
+  useEffect(() => {
+    if (ingredients.length === 0) {
+      alert('No ingredients to order. Redirecting...');
+      navigate('/'); 
+    }
+  }, [ingredients, navigate]);
+
   const handleAddToCart = async () => {
     const items = ingredients.map(ingredient => ({
       ingredientId: ingredient.ingredientId._id,
@@ -51,7 +65,6 @@ const Order = () => {
   };
 
   let totalPrice = 0;
-
   function calculateTotalPrice() {
     totalPrice = 0 ;
     ingredients.forEach(function (ingredient) {
@@ -61,9 +74,23 @@ const Order = () => {
     return totalPrice;
   }
 
+  function handleIncreaseIngredient(id) {
+    setIngredients(ingredients.map(i => ({...i, quantity: i.ingredientId._id === id? i.quantity*2 : i.quantity})))
+  }
+
+  function handleDecreaseIngredient(id) {
+    setIngredients(ingredients.map(i => ({...i, quantity: i.ingredientId._id === id? i.quantity/2 : i.quantity})))
+  }
+
+  function handleIngredientChange(id) {
+    setIngredients(ingredients.map(i => ({...i, quantity: i.ingredientId._id === id?
+                                         document.getElementById(`${i.ingredientId._id}_input`).value : i.quantity})))
+  }
+
   return (
     <div className="order-page">
       <h1>Order Ingredients</h1>
+      
       {ingredients.length > 0 ? (
         <ul>
           {ingredients.map((ingredient) => (
@@ -78,6 +105,11 @@ const Order = () => {
                   ingredient.ingredientId.price
                 ).toFixed(2)}{" "}
                 VND
+                <button onClick={()=> handleIncreaseIngredient(ingredient.ingredientId._id)}>Increase</button> 
+                <button onClick={()=> handleDecreaseIngredient(ingredient.ingredientId._id)}>Decrease</button>
+                <input id={`${ingredient.ingredientId._id}_input`}
+                       type="number" 
+                       onChange={()=>handleIngredientChange(ingredient.ingredientId._id)} />
               </p>
             </li>
           ))}

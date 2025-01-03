@@ -5,7 +5,6 @@ export const populateFoodListPrices = async (food_list) => {
         food_list.map(async (foodItem) => {
             try {
                 const price = await fetchRecipePrice(foodItem._id);
-                console.log(price);
                 return { ...foodItem, price: price };
             } catch (error) {
                 console.error(`Error fetching price for ${foodItem.name}:`, error.message);
