@@ -1,0 +1,29 @@
+.order-details {
+    padding: 20px;
+  }
+  
+  .order-details ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .order-details li {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .back-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .back-btn:hover {
+    background-color: #45a049;
+  }
+  

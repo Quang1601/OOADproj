@@ -1,0 +1,30 @@
+.supplier-dashboard {
+    padding: 20px;
+  }
+  
+  .order-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .order-item {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .order-item div {
+    margin-bottom: 5px;
+  }
+  
+  .order-item a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
+  }
+  
+  .order-item a:hover {
+    text-decoration: underline;
+  }
+  

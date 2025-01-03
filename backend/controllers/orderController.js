@@ -49,3 +49,49 @@ export const deleteOrder = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+export const getAllOrders = async (req, res) => {
+  try {
+    const orders = await orderModel.find().populate('cartId'); 
+    res.status(200).json({ orders });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+export const getOrderDetails = async (req, res) => {
+  const { orderId } = req.params;
+
+  try {
+    const order = await orderModel
+      .findById(orderId)
+      .populate({
+        path: 'cartId',
+        populate: {
+          path: 'items.ingredientId', 
+        },
+      });
+
+    if (!order) {
+      return res.status(404).json({ error: "Order not found" });
+    }
+
+    const response = {
+      _id: order._id,
+      totalPrice: order.totalPrice,
+      items: order.cartId.items.map(item => ({
+        ingredientId: {
+          name: item.ingredientId.name,
+          unit: item.ingredientId.unit,
+        },
+        quantity: item.quantity,
+      })),
+      customerDetails: order.customerDetails,
+      orderDate: order.orderDate,
+    };
+
+    res.status(200).json({ order: response });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
