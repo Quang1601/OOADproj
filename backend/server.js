@@ -6,6 +6,7 @@ import recipeRouter from "./routes/recipeRoute.js";
 import path from "path";
 import { calculateRecipePrice} from "./controllers/recipeController.js";
 import cartRouter from "./routes/cartRoute.js";
+import orderRouter from "./routes/orderRoute.js";
 
 // app config
 const app = express()
@@ -21,6 +22,7 @@ connectDB();
 app.use("/api/ingredient",ingredientRouter)
 app.use("/api/recipe", recipeRouter)
 app.use("/api/cart",cartRouter)
+app.use("/api/order",orderRouter)
 
 app.get("/",(req,res)=>{
     res.send("API Working")

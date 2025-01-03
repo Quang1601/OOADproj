@@ -2,7 +2,16 @@ import orderModel from "../models/orderModel.js";
 import cartModel from "../models/cartModel.js";
 
 export const createOrder = async (req, res) => {
-  const { cartId, customerDetails } = req.body;
+  const { cartId, customerDetails, orderDate } = req.body;
+
+  if (!cartId || !customerDetails) {
+    return res.status(400).json({ error: "cartId and customerDetails are required" });
+  }
+
+  const { name, location, phone } = customerDetails;
+  if (!name || !location || !phone) {
+    return res.status(400).json({ error: "Customer details are incomplete" });
+  }
 
   try {
     const cart = await cartModel.findById(cartId);
@@ -14,6 +23,7 @@ export const createOrder = async (req, res) => {
       cartId,
       totalPrice: cart.totalPrice,
       customerDetails,
+      orderDate: orderDate || new Date(), 
     });
 
     await newOrder.save();
@@ -22,6 +32,7 @@ export const createOrder = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
 
 export const deleteOrder = async (req, res) => {
   const { orderId } = req.params;

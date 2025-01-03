@@ -11,6 +11,12 @@ const Cart = () => {
   const [cartDetails, setCartDetails] = useState(null);
   const [items, setItems] = useState(initialItems);
   const [loading, setLoading] = useState(true);
+  const [customerDetails, setCustomerDetails] = useState({
+    name: '',
+    phone: '',
+    location: '',
+    orderDate: new Date().toISOString().split('T')[0],
+  });
 
   useEffect(() => {
     const fetchCartDetails = async () => {
@@ -33,8 +39,13 @@ const Cart = () => {
     fetchCartDetails();
   }, [cartId]);
 
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setCustomerDetails((prev) => ({ ...prev, [id]: value }));
+  };
+
   const handleBack = () => {
-    navigate(-1, { state: { ingredients: items } });
+    navigate('/order', { state: { ingredients: items.ingredients } });
   };
 
   const handleCancelCart = async () => {
@@ -59,6 +70,34 @@ const Cart = () => {
   if (!cartDetails) {
     return <p>Cart not found. Please try again.</p>;
   }
+
+  const handleCheckout = async () => {
+    const { name, phone, location } = customerDetails;
+
+    if (!name || !phone || !location) {
+      alert('Please fill in all fields.');
+      return;
+    }
+
+    try {
+      const response = await fetch('http://localhost:4000/api/order/add', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          cartId,
+          customerDetails: { name, phone, location },
+          total: cartDetails.totalPrice + 2,
+          orderDate: new Date().toISOString(),
+        }),
+      });
+
+      if (!response.ok) throw new Error('Failed to create order');
+      alert('Order created successfully');
+    } catch (error) {
+      console.error('Error creating order:', error);
+      alert('Failed to create order.');
+    }
+  };
 
   const deliveryFee = 2;
   const subtotal = cartDetails.totalPrice;
@@ -87,22 +126,40 @@ const Cart = () => {
         <h3>Customer Details</h3>
         <div className="customer-details-field">
           <label htmlFor="name">Name:</label>
-          <input type="text" id="name" placeholder="Enter your name" />
+          <input
+            type="text"
+            id="name"
+            value={customerDetails.name}
+            onChange={handleInputChange}
+            placeholder="Enter your name"
+          />
         </div>
         <div className="customer-details-field">
           <label htmlFor="phone">Phone:</label>
-          <input type="text" id="phone" placeholder="Enter your phone number" />
+          <input
+            type="text"
+            id="phone"
+            value={customerDetails.phone}
+            onChange={handleInputChange}
+            placeholder="Enter your phone number"
+          />
         </div>
         <div className="customer-details-field">
           <label htmlFor="location">Location:</label>
-          <input type="text" id="location" placeholder="Enter your location" />
+          <input
+            type="text"
+            id="location"
+            value={customerDetails.location}
+            onChange={handleInputChange}
+            placeholder="Enter your location"
+          />
         </div>
       </div>
       <div className="cart-actions">
         <button className="cancel-btn" onClick={handleCancelCart}>
           Cancel
         </button>
-        <button className="checkout-btn">Proceed to Checkout</button>
+        <button className="checkout-btn" onClick={handleCheckout}>Proceed to Checkout</button>
       </div>
     </div>
   );
