@@ -30,7 +30,6 @@ const OrderDetails = () => {
   }
 
   if (!orderDetails) {
-    console.log(orderId);
     return <p>Order not found.</p>;
   }
 
@@ -39,6 +38,10 @@ const OrderDetails = () => {
       <h1>Order Details</h1>
       <p><strong>Order ID:</strong> {orderDetails._id}</p>
       <p><strong>Total Price:</strong> {orderDetails.totalPrice} VND</p>
+      <h3>Customer Details:</h3>
+      <p><strong>Name:</strong> {orderDetails.customerDetails.name}</p>
+      <p><strong>Phone:</strong> {orderDetails.customerDetails.phone}</p>
+      <p><strong>Location:</strong> {orderDetails.customerDetails.location}</p>
       <h3>Items:</h3>
       <ul>
         {orderDetails.items.map((item, index) => (
