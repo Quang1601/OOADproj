@@ -25,4 +25,26 @@
     font-size: max(1vw,12px);
     
 }
-
+.increase-icon {
+    font-size: 1.5rem;
+    color: #007bff; 
+    cursor: pointer; 
+    transition: transform 0.2s ease, color 0.2s ease; /* Hiệu ứng chuyển đổi mượt */
+  }
+  
+  .increase-icon:hover {
+    color: #0056b3; 
+    transform: scale(1.2); 
+  }
+  .decrease-icon {
+    font-size: 1.5rem;  
+    color:#f04e30 ; 
+    cursor: pointer; 
+    transition: transform 0.2s ease, color 0.2s ease; 
+  }
+  
+  .decrease-icon:hover {
+    color: red; 
+    transform: scale(1.2); 
+  }
+  

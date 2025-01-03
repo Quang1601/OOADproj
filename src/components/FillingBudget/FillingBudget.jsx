@@ -5,6 +5,9 @@ function FillingBudget({budget,setBudget}) {
 
     function handleBudgetChange(e) {
         setBudget(e.target.value)
+        if (e.target.value === "") {
+            setBudget(10000000000)
+        }
     }
 
 

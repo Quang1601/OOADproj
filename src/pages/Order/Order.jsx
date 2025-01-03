@@ -1,6 +1,9 @@
 import './Order.css';
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Order = () => {
   const location = useLocation();
@@ -19,7 +22,7 @@ const Order = () => {
   useEffect(() => {
     if (ingredients.length === 0) {
       alert('No ingredients to order. Redirecting...');
-      navigate('/'); 
+      navigate('/');
     }
   }, [ingredients, navigate]);
 
@@ -33,7 +36,7 @@ const Order = () => {
   useEffect(() => {
     if (ingredients.length === 0) {
       alert('No ingredients to order. Redirecting...');
-      navigate('/'); 
+      navigate('/');
     }
   }, [ingredients, navigate]);
 
@@ -58,7 +61,7 @@ const Order = () => {
 
       const result = await response.json();
       setCartCreated(true);
-      navigate('/cart', { state: { cartId: result.cart._id } }); 
+      navigate('/cart', { state: { cartId: result.cart._id } });
     } catch (error) {
       console.error('Error adding to cart:', error.message);
     }
@@ -66,7 +69,7 @@ const Order = () => {
 
   let totalPrice = 0;
   function calculateTotalPrice() {
-    totalPrice = 0 ;
+    totalPrice = 0;
     ingredients.forEach(function (ingredient) {
       totalPrice += ingredient.ingredientId.price * (ingredient.quantity / ingredient.ingredientId.quantity);
     });
@@ -75,22 +78,24 @@ const Order = () => {
   }
 
   function handleIncreaseIngredient(id) {
-    setIngredients(ingredients.map(i => ({...i, quantity: i.ingredientId._id === id? i.quantity*2 : i.quantity})))
+    setIngredients(ingredients.map(i => ({ ...i, quantity: i.ingredientId._id === id ? i.quantity * 2 : i.quantity })))
   }
 
   function handleDecreaseIngredient(id) {
-    setIngredients(ingredients.map(i => ({...i, quantity: i.ingredientId._id === id? i.quantity/2 : i.quantity})))
+    setIngredients(ingredients.map(i => ({ ...i, quantity: i.ingredientId._id === id ? i.quantity / 2 : i.quantity })))
   }
 
   function handleIngredientChange(id) {
-    setIngredients(ingredients.map(i => ({...i, quantity: i.ingredientId._id === id?
-                                         document.getElementById(`${i.ingredientId._id}_input`).value : i.quantity})))
+    setIngredients(ingredients.map(i => ({
+      ...i, quantity: i.ingredientId._id === id ?
+        document.getElementById(`${i.ingredientId._id}_input`).value : i.quantity
+    })))
   }
 
   return (
     <div className="order-page">
       <h1>Order Ingredients</h1>
-      
+
       {ingredients.length > 0 ? (
         <ul>
           {ingredients.map((ingredient) => (
@@ -105,11 +110,22 @@ const Order = () => {
                   ingredient.ingredientId.price
                 ).toFixed(2)}{" "}
                 VND
-                <button onClick={()=> handleIncreaseIngredient(ingredient.ingredientId._id)}>Increase</button> 
-                <button onClick={()=> handleDecreaseIngredient(ingredient.ingredientId._id)}>Decrease</button>
+                <FontAwesomeIcon
+                  icon={faArrowUp}
+                  onClick={() => handleIncreaseIngredient(ingredient.ingredientId._id)}
+                  className="increase-icon"
+                  title="Increase"
+                />
+
+                <FontAwesomeIcon
+                  icon={faArrowDown}
+                  onClick={() => handleDecreaseIngredient(ingredient.ingredientId._id)}
+                  className="decrease-icon"
+                  title='Decrease'
+                />
                 <input id={`${ingredient.ingredientId._id}_input`}
-                       type="number" 
-                       onChange={()=>handleIngredientChange(ingredient.ingredientId._id)} />
+                  type="number"
+                  onChange={() => handleIngredientChange(ingredient.ingredientId._id)} />
               </p>
             </li>
           ))}

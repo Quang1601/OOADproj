@@ -3,7 +3,7 @@ import'./Home.css'
 import Header from '../../components/Header/Header'
 import ExploreMenu from '../../components/ExploreMenu/Exploremenu'
 import FoodDisplay from '../../components/FoodDisplay/FoodDisplay'
-import FillingBudget from '../../components/FillingBudget/fillingBudget'
+import FillingBudget from '../../components/FillingBudget/FillingBudget'
 
 
 const Home = () => {
